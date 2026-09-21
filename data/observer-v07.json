@@ -1,0 +1,35 @@
+{
+  "methods": {
+    "control-agent::uniform::none": {
+      "experiments": 200,
+      "correlation_sum": 0.0,
+      "correlation_sq_sum": 0.0,
+      "top_reward_sum": 200.2392500000001,
+      "baseline_reward_sum": 200.2392500000001,
+      "wins": 0,
+      "losses": 0,
+      "ties": 200
+    },
+    "binary-agent::bit-transitions::window=3": {
+      "experiments": 200,
+      "correlation_sum": -0.7291753562665129,
+      "correlation_sq_sum": 25.827556822497186,
+      "top_reward_sum": 200.46900000000005,
+      "baseline_reward_sum": 200.2392500000001,
+      "wins": 103,
+      "losses": 96,
+      "ties": 1
+    },
+    "binary-agent::hamming-balance::center=1.5": {
+      "experiments": 200,
+      "correlation_sum": -2.265826430676237,
+      "correlation_sq_sum": 26.423518712567216,
+      "top_reward_sum": 200.18200000000007,
+      "baseline_reward_sum": 200.2392500000001,
+      "wins": 105,
+      "losses": 95,
+      "ties": 0
+    }
+  },
+  "experiments": 200
+}

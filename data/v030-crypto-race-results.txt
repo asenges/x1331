@@ -1,0 +1,94 @@
+X1331 v0.30 Cryptographic Landscape Race
+========================================
+Input              : data/bitcoin-history-v020-frozen.csv
+Target             : SHA256d leading-zero >= 8
+Expected p         : 1/256
+Header stride      : 100
+Train headers      : 1500
+Blind headers      : 500
+Train candidates/H : 4096
+Blind candidate pool: 8192
+Blind kept/H       : 1024
+Features           : 161
+Learning rate      : 0.015
+Historical nonce   : MASKED / UNUSED
+Winning hash       : UNUSED
+
+DATASET
+-------
+Sampled headers : 2000
+Train range     : 700000..849900
+Blind range     : 850000..899900
+
+TRAINING
+--------
+trained  250/1500 headers | hashes    1024000 | positives 3960
+trained  500/1500 headers | hashes    2048000 | positives 7956
+trained  750/1500 headers | hashes    3072000 | positives 12028
+trained 1000/1500 headers | hashes    4096000 | positives 15989
+trained 1250/1500 headers | hashes    5120000 | positives 20056
+trained 1500/1500 headers | hashes    6144000 | positives 24079
+
+TRAIN COMPLETE
+Hashes      : 6144000
+Positives   : 24079
+Observed p  : 0.00391911
+Time        : 13.726s
+
+BLIND EQUAL-BUDGET RACE
+-----------------------
+blind 100/500 | X=369 CTRL=405
+blind 200/500 | X=778 CTRL=790
+blind 300/500 | X=1164 CTRL=1191
+blind 400/500 | X=1575 CTRL=1592
+blind 500/500 | X=1992 CTRL=1987
+
+FINAL BLIND RESULTS
+-------------------
+Equal SHA budget : 512000 hashes/arm
+
+X1331 successes  : 1992
+CONTROL successes: 1987
+
+X1331 rate       : 0.00389062
+CONTROL rate     : 0.00388086
+IDEAL rate       : 0.00390625
+
+PREDICTION GAIN  : 1.00251636x
+Δ success rate   : +0.00000977
+
+Mean LZ X1331    : 0.997195
+Mean LZ CONTROL  : 1.002514
+Mean best LZ/H X : 10.308000
+Mean best LZ/H C : 10.288000
+
+HEADER-LEVEL SCORE
+------------------
+X1331 wins   : 227
+CONTROL wins : 204
+Ties         : 69
+
+Blind runtime: 4.063s
+
+INTERPRETATION
+--------------
+Primary metric: PREDICTION GAIN.
+Gain ~1 means no usable cryptographic information.
+Gain >1 in this development experiment is only
+a candidate signal and MUST be independently replicated.
+
+This experiment gives X1331 and CONTROL exactly
+the same number of SHA256d evaluations.
+
+The historical winning nonce is not used.
+The historical winning hash is not used.
+
+Candidate ranking occurs BEFORE blind SHA256d.
+
+IMPORTANT: the control is the lowest-scored
+portion of the same pool. Therefore a positive
+result must later be repeated against an independent
+uniform-random equal-budget control as well.
+
+V0.30 COMPLETE
+==============

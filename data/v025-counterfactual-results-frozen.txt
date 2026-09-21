@@ -1,0 +1,161 @@
+X1331 v0.25 Counterfactual SHA Laboratory
+=========================================
+Input              : data/bitcoin-history-v020-frozen.csv
+Historical range   : 700000..899999
+Header step        : 100
+Headers sampled    : 2000
+Samples/state/head : 256
+SHA256d evaluations: 4096000
+PRNG seed          : 0x133120260921A55A
+L9                  : nonce bits 7..5
+Budget/state        : EQUAL
+Winning nonce       : NOT USED
+
+DATASET VALIDATION
+------------------
+Rows            : 200000
+Sampled headers : 2000
+First header    : 700000
+Last header     : 899900
+Verified        : ALL
+
+Progress:  250/2000 headers    512000 SHA256d
+Progress:  500/2000 headers   1024000 SHA256d
+Progress:  750/2000 headers   1536000 SHA256d
+Progress: 1000/2000 headers   2048000 SHA256d
+Progress: 1250/2000 headers   2560000 SHA256d
+Progress: 1500/2000 headers   3072000 SHA256d
+Progress: 1750/2000 headers   3584000 SHA256d
+Progress: 2000/2000 headers   4096000 SHA256d
+
+HASHING COMPLETE
+----------------
+SHA256d          : 4096000
+Elapsed          : 5.009s
+SHA256d/sec      : 817679.84
+Per L9 state     : 512000
+Equal budget      : PASS
+
+SPLIT A — heights 700000..799900
+----------------------------------
+L9             N    MeanHash          SE     MeanLZ      LZ>=4      LZ>=8     LZ>=12
+000       256000  0.50091810  0.00057021   0.994551   6.23867%   0.38320%   0.02539%
+001       256000  0.49976687  0.00057072   1.002188   6.31133%   0.40195%   0.02148%
+010       256000  0.49972617  0.00057053   1.002867   6.33281%   0.38672%   0.02500%
+011       256000  0.50007335  0.00057146   1.002797   6.29414%   0.38789%   0.02422%
+100       256000  0.50006039  0.00057034   0.999168   6.19336%   0.38633%   0.01953%
+101       256000  0.50008059  0.00057032   0.998535   6.27461%   0.36953%   0.02070%
+110       256000  0.49998606  0.00056961   0.996938   6.13203%   0.40156%   0.02734%
+111       256000  0.49982686  0.00057010   1.000816   6.25664%   0.40977%   0.02383%
+
+L9          LZ>=16
+000      0.000781%
+001      0.002344%
+010      0.001172%
+011      0.001953%
+100      0.000781%
+101      0.002734%
+110      0.001563%
+111      0.000391%
+
+Aggregate mean hash : 0.500054800
+Aggregate mean LZ   : 0.999732422
+Aggregate LZ>=8     : 0.390869%
+
+SPLIT B — heights 800000..899900
+----------------------------------
+L9             N    MeanHash          SE     MeanLZ      LZ>=4      LZ>=8     LZ>=12
+000       256000  0.49892309  0.00056930   1.000215   6.23867%   0.38125%   0.02891%
+001       256000  0.49986826  0.00057004   0.999246   6.20234%   0.40117%   0.02148%
+010       256000  0.49963557  0.00057071   0.999930   6.23984%   0.37734%   0.02461%
+011       256000  0.49992157  0.00057050   0.998805   6.22891%   0.38086%   0.01875%
+100       256000  0.50014887  0.00056957   0.996992   6.19570%   0.39062%   0.02148%
+101       256000  0.49889453  0.00057014   1.004320   6.23633%   0.40820%   0.01992%
+110       256000  0.50014610  0.00057036   0.999387   6.24531%   0.39531%   0.02812%
+111       256000  0.50066283  0.00057160   0.999383   6.25195%   0.38359%   0.02266%
+
+L9          LZ>=16
+000      0.001172%
+001      0.001563%
+010      0.001563%
+011      0.001953%
+100      0.000391%
+101      0.001953%
+110      0.002734%
+111      0.001172%
+
+Aggregate mean hash : 0.499775101
+Aggregate mean LZ   : 0.999784668
+Aggregate LZ>=8     : 0.389795%
+
+COMBINED — 2000 HEADERS
+-------------------------
+L9             N    MeanHash          SE     MeanLZ      LZ>=4      LZ>=8     LZ>=12
+000       512000  0.49992059  0.00040288   0.997383   6.23867%   0.38223%   0.02715%
+001       512000  0.49981756  0.00040332   1.000717   6.25684%   0.40156%   0.02148%
+010       512000  0.49968087  0.00040349   1.001398   6.28633%   0.38203%   0.02480%
+011       512000  0.49999746  0.00040375   1.000801   6.26152%   0.38438%   0.02148%
+100       512000  0.50010463  0.00040302   0.998080   6.19453%   0.38848%   0.02051%
+101       512000  0.49948756  0.00040322   1.001428   6.25547%   0.38887%   0.02031%
+110       512000  0.50006608  0.00040304   0.998162   6.18867%   0.39844%   0.02773%
+111       512000  0.50024485  0.00040365   1.000100   6.25430%   0.39668%   0.02324%
+
+L9          LZ>=16
+000      0.000977%
+001      0.001953%
+010      0.001367%
+011      0.001953%
+100      0.000586%
+101      0.002344%
+110      0.002148%
+111      0.000781%
+
+Aggregate mean hash : 0.499914950
+Aggregate mean LZ   : 0.999758545
+Aggregate LZ>=8     : 0.390332%
+
+STATE RANGE — CONTINUOUS HASH SCORE
+-----------------------------------
+Lowest mean : 101 0.499487559
+Highest mean: 111 0.500244846
+Range       : 0.000757287
+
+EXPECTED IDEAL-SHA REFERENCE
+----------------------------
+Mean normalized prefix : 0.500000
+P(LZ>=4)               : 6.250000%
+P(LZ>=8)               : 0.390625%
+P(LZ>=12)              : 0.024414%
+P(LZ>=16)              : 0.001526%
+Mean leading zeros     : ~1.000000
+
+INTERPRETATION
+--------------
+Each L9 state received exactly the
+same computational budget.
+
+Therefore the historical frequency
+with which miners produced winning
+nonces in each L9 state cannot by
+itself create a difference here.
+
+A state difference in this experiment
+must replicate across independent
+header splits before further study.
+
+No state is promoted to a new
+hypothesis from this run alone.
+
+This experiment still does NOT prove
+or disprove profitable mining.
+It tests SHA256d output geometry under
+controlled equal-budget nonce regions.
+
+V0.25 COMPLETE
+==============
+Historical winning nonce : EXCLUDED
+Equal state budget        : YES
+Real Bitcoin headers      : YES
+Real SHA256d              : YES
+Adaptive selection        : NONE
+ML                         : NONE

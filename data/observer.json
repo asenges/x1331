@@ -1,0 +1,15 @@
+{
+  "agents": {
+    "binary-weight": {
+      "observations": 200,
+      "reward_sum": 200.18499999999995,
+      "reward_sq_sum": 200.71875900000015
+    },
+    "uniform": {
+      "observations": 200,
+      "reward_sum": 200.18499999999995,
+      "reward_sq_sum": 200.71875900000015
+    }
+  },
+  "experiments": 200
+}

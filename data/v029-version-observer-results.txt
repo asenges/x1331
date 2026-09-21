@@ -1,0 +1,126 @@
+X1331 v0.29 Version-Bit Observer
+================================
+Input              : data/bitcoin-history-v020-frozen.csv
+Rows               : 200000
+Warm-up            : 20000
+Scored             : 180000
+Features           : bias + 32 version bits
+Parameters         : 264
+Learning rate      : 0.010000
+L2                 : 0.00001000
+Target             : historical winning nonce L9
+Walk-forward       : YES
+Future leakage     : NONE
+Nonce as feature   : NO
+Winning hash input : NO
+
+DATASET VALIDATION
+------------------
+Rows       : 200000
+Range      : 700000..899999
+Chronology : PASS
+
+WALK-FORWARD
+------------
+720000..739999 | PRIOR R1  17.81% LL 2.003754 | OBS R1  16.56% LL 1.987212 | ΔLL -0.016542
+740000..759999 | PRIOR R1  19.38% LL 1.958725 | OBS R1  18.84% LL 1.937864 | ΔLL -0.020861
+760000..779999 | PRIOR R1  19.35% LL 1.931263 | OBS R1  19.27% LL 1.908225 | ΔLL -0.023038
+780000..799999 | PRIOR R1  18.63% LL 1.941720 | OBS R1  18.82% LL 1.929936 | ΔLL -0.011784
+800000..819999 | PRIOR R1  18.80% LL 1.948878 | OBS R1  18.05% LL 1.940443 | ΔLL -0.008435
+820000..839999 | PRIOR R1  17.55% LL 1.974821 | OBS R1  17.96% LL 1.964283 | ΔLL -0.010538
+840000..859999 | PRIOR R1  18.20% LL 1.969901 | OBS R1  17.21% LL 1.961658 | ΔLL -0.008244
+860000..879999 | PRIOR R1  17.16% LL 1.998450 | OBS R1  17.29% LL 1.991928 | ΔLL -0.006522
+880000..899999 | PRIOR R1  17.09% LL 2.016719 | OBS R1  16.64% LL 2.016014 | ΔLL -0.000705
+
+FINAL RESULTS
+-------------
+Model                    R@1       R@2       R@3       R@4     LogLoss       Brier
+PRIOR                18.218%   36.082%   53.911%   71.652%    1.971581    0.850130
+VERSION-BITS         17.848%   35.611%   53.264%   70.480%    1.959729    0.850500
+
+GAIN VS PRIOR
+-------------
+G@1 = 0.979690   ΔRecall = -0.3700 pp
+G@2 = 0.986943   ΔRecall = -0.4711 pp
+G@3 = 0.988015   ΔRecall = -0.6461 pp
+G@4 = 0.983648   ΔRecall = -1.1717 pp
+
+ΔLogLoss = -0.01185203
+ΔBrier   = +0.00037022
+
+LEARNED VERSION-BIT MAGNITUDES
+------------------------------
+Descriptive only.
+Magnitude = RMS weight across 8 L9 states.
+
+#01 version bit 28  RMS=0.29385829
+#02 version bit 29  RMS=0.18164272
+#03 version bit 17  RMS=0.12898318
+#04 version bit 23  RMS=0.10729188
+#05 version bit 26  RMS=0.10603907
+#06 version bit 25  RMS=0.09344474
+#07 version bit  2  RMS=0.08752794
+#08 version bit 20  RMS=0.08224132
+#09 version bit 22  RMS=0.07978731
+#10 version bit 15  RMS=0.07484405
+#11 version bit 27  RMS=0.07087940
+#12 version bit 16  RMS=0.06984139
+#13 version bit 18  RMS=0.06783411
+#14 version bit 19  RMS=0.06766065
+#15 version bit 24  RMS=0.06587934
+#16 version bit 14  RMS=0.06426388
+#17 version bit 21  RMS=0.05974389
+#18 version bit 13  RMS=0.04089280
+#19 version bit  0  RMS=0.00000000
+#20 version bit  1  RMS=0.00000000
+#21 version bit  3  RMS=0.00000000
+#22 version bit  4  RMS=0.00000000
+#23 version bit  5  RMS=0.00000000
+#24 version bit  6  RMS=0.00000000
+#25 version bit  7  RMS=0.00000000
+#26 version bit  8  RMS=0.00000000
+#27 version bit  9  RMS=0.00000000
+#28 version bit 10  RMS=0.00000000
+#29 version bit 11  RMS=0.00000000
+#30 version bit 12  RMS=0.00000000
+#31 version bit 30  RMS=0.00000000
+#32 version bit 31  RMS=0.00000000
+
+FINAL HISTORICAL L9 PRIOR
+-------------------------
+000   35440  17.72000%
+001   36120  18.06000%
+010   35236  17.61800%
+011   34857  17.42850%
+100   21207  10.60350%
+101   14234   7.11700%
+110   13788   6.89400%
+111    9118   4.55900%
+
+INTERPRETATION RULE
+-------------------
+Primary comparison is VERSION-BITS vs PRIOR.
+
+Useful historical conditional information requires
+lower out-of-sample walk-forward LogLoss/Brier.
+
+Top-K gains > 1 would additionally show that
+probability improvements alter collapse decisions.
+
+Because v0.29 was designed after observing v0.27/v0.28,
+700000..899999 is DEVELOPMENT evidence.
+It is NOT a pristine confirmation dataset for v0.29.
+
+A positive result must later be frozen and tested
+on newly acquired blocks > 899999.
+
+This remains mining-process prediction.
+It does NOT establish SHA256d predictability.
+
+V0.29 COMPLETE
+==============
+Future leakage       : NONE
+Winning nonce input  : NO
+Winning hash input   : NO
+Features             : version bits only
+Update               : one-pass online

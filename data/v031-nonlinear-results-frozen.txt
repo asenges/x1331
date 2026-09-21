@@ -1,0 +1,69 @@
+X1331 v0.31 Nonlinear Cryptographic Observer
+============================================
+Network            : 161 -> 128 -> 64 -> 1
+Target             : SHA256d LZ >= 8
+Train headers      : 1500
+Blind headers      : 500
+Candidate pool/H   : 8192
+Keep/arm/H         : 1024
+Arms               : TOP / RANDOM / BOTTOM
+Historical nonce   : MASKED / UNUSED
+Winning hash       : UNUSED
+Status             : DEVELOPMENT
+
+TRAIN 700000..849900
+BLIND 850000..899900
+
+trained  250/1500 | hashes 1024000 | positives 3905
+trained  500/1500 | hashes 2048000 | positives 7766
+trained  750/1500 | hashes 3072000 | positives 11735
+trained 1000/1500 | hashes 4096000 | positives 15597
+trained 1250/1500 | hashes 5120000 | positives 19573
+trained 1500/1500 | hashes 6144000 | positives 23593
+
+TRAIN COMPLETE
+Hashes    : 6144000
+Positives : 23593
+Rate      : 0.00384001
+Time      : 382.125s
+
+blind 100/500 | TOP 420 RANDOM 424 BOTTOM 382
+blind 200/500 | TOP 849 RANDOM 818 BOTTOM 759
+blind 300/500 | TOP 1266 RANDOM 1236 BOTTOM 1186
+blind 400/500 | TOP 1693 RANDOM 1646 BOTTOM 1573
+blind 500/500 | TOP 2117 RANDOM 2048 BOTTOM 1952
+
+FINAL RESULTS
+-------------
+Hashes/arm : 512000
+
+TOP    :  2117  rate 0.00413477
+RANDOM :  2048  rate 0.00400000
+BOTTOM :  1952  rate 0.00381250
+
+GAIN TOP/RANDOM    : 1.03369141x
+GAIN TOP/BOTTOM    : 1.08452869x
+GAIN RANDOM/BOTTOM : 1.04918033x
+
+Mean LZ TOP/RANDOM/BOTTOM : 1.002629 / 1.000873 / 0.998432
+Mean best LZ/header       : 10.356000 / 10.260000 / 10.202000
+
+TOP vs RANDOM header score
+TOP wins    : 231
+RANDOM wins : 205
+Ties        : 64
+
+Blind time : 154.258s
+
+DECISION RULE
+-------------
+Desired ordering: TOP > RANDOM > BOTTOM.
+Primary mining metric: TOP/RANDOM.
+TOP/BOTTOM alone is insufficient.
+Gain approximately 1 means no usable signal.
+
+Any positive result here remains DEVELOPMENT evidence
+because heights <= 899999 have already informed X1331.
+Independent confirmation requires untouched headers > 899999.
+
+V0.31 COMPLETE

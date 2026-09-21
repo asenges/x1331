@@ -1,0 +1,116 @@
+X1331 v0.26 Header -> Hash Landscape Laboratory
+===============================================
+Input             : data/bitcoin-history-v020-frozen.csv
+Headers           : 2000
+Train             : 1500
+Blind             : 500
+Samples/state     : 256
+Landscape target  : LZ >= 8
+States            : 8 (nonce bits 7..5)
+Features          : Header76 only
+Nonce feature     : EXCLUDED
+Hash feature      : EXCLUDED
+Epochs            : 40
+Learning rate     : 0.0500
+Future leakage    : NONE
+
+DATASET VALIDATION
+------------------
+Rows          : 200000
+Headers       : 2000
+Range         : 700000..899900
+Verified      : ALL
+
+BUILDING LANDSCAPES
+-------------------
+Progress  250/2000  SHA256d 512000
+Progress  500/2000  SHA256d 1024000
+Progress  750/2000  SHA256d 1536000
+Progress 1000/2000  SHA256d 2048000
+Progress 1250/2000  SHA256d 2560000
+Progress 1500/2000  SHA256d 3072000
+Progress 1750/2000  SHA256d 3584000
+Progress 2000/2000  SHA256d 4096000
+
+LANDSCAPES COMPLETE
+-------------------
+SHA256d      : 4096000
+Elapsed      : 5.321s
+SHA256d/sec  : 769740.85
+
+TRAINING
+--------
+epoch  1/40 loss 2.111383774
+epoch  5/40 loss 2.100497745
+epoch 10/40 loss 2.100504777
+epoch 15/40 loss 2.100481764
+epoch 20/40 loss 2.100454325
+epoch 25/40 loss 2.100426011
+epoch 30/40 loss 2.100399097
+epoch 35/40 loss 2.100374239
+epoch 40/40 loss 2.100351316
+
+BLIND EVALUATION
+----------------
+Range : 850000..899900
+Blind low-hash events : 3978
+
+TRAIN STATIC PRIOR
+------------------
+001  events=1557  p=12.964197%
+111  events=1529  p=12.731057%
+110  events=1520  p=12.656120%
+100  events=1513  p=12.597835%
+101  events=1492  p=12.422981%
+010  events=1474  p=12.273106%
+011  events=1468  p=12.223147%
+000  events=1457  p=12.131557%
+
+BLIND N -> K RESULTS
+--------------------
+K        Random      Static    Observer     GainRnd    GainStat
+1     12.50000%   12.54399%   12.26747%    0.981398    0.977956
+2     25.00000%   25.16340%   23.85621%    0.954248    0.948052
+3     37.50000%   38.23529%   36.60131%    0.976035    0.957265
+4     50.00000%   50.20111%   49.42182%    0.988436    0.984477
+
+ROTATING CONTROL
+----------------
+K=1 recall=11.86526% gain=0.949221
+K=2 recall=24.10759% gain=0.964304
+K=3 recall=37.12921% gain=0.990112
+K=4 recall=49.97486% gain=0.999497
+
+OBSERVER TOP1 DISTRIBUTION
+--------------------------
+000   236/500  47.20%
+001    23/500  4.60%
+010    86/500  17.20%
+011     5/500  1.00%
+100     2/500  0.40%
+101   126/500  25.20%
+110    19/500  3.80%
+111     3/500  0.60%
+
+INTERPRETATION RULE
+-------------------
+The Observer is useful only if its
+blind performance improves over BOTH
+uniform/random expectation and the
+static TRAIN landscape.
+
+A training-loss decrease is NOT
+evidence of predictive information.
+
+No hyperparameter may be changed
+after this output and still call the
+result a replication of v0.26.
+
+V0.26 COMPLETE
+==============
+Train headers       : 1500
+Blind headers       : 500
+Header nonce bytes  : EXCLUDED
+Candidate hashes    : LABEL ONLY
+Future leakage      : NONE
+Adaptive blind fit  : NONE

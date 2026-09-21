@@ -1,0 +1,105 @@
+X1331 v0.28 Challenge Fingerprint Ablation
+==========================================
+Input             : data/bitcoin-history-v020-frozen.csv
+Rows              : 200000
+Warm-up           : 20000
+Scored            : 180000
+Buckets/model     : 4096
+Smoothing alpha   : 8.000
+Target            : historical winning nonce L9
+Target bits       : nonce bits 7..5
+Walk-forward      : YES
+Future leakage    : NONE
+Winning nonce input: EXCLUDED
+Winning hash input : EXCLUDED
+Purpose           : process fingerprint attribution
+
+DATASET VALIDATION
+------------------
+Rows        : 200000
+Range       : 700000..899999
+Chronology  : PASS
+Header size : 80 bytes
+
+WALK-FORWARD
+------------
+processed  20000/200000 height 719999
+processed  40000/200000 height 739999
+processed  60000/200000 height 759999
+processed  80000/200000 height 779999
+processed 100000/200000 height 799999
+processed 120000/200000 height 819999
+processed 140000/200000 height 839999
+processed 160000/200000 height 859999
+processed 180000/200000 height 879999
+processed 200000/200000 height 899999
+
+MODEL RESULTS
+-------------
+Model                  R@1       R@2       R@3       R@4     LogLoss       Brier
+PRIOR              18.218%   36.082%   53.911%   71.652%    1.971578    0.850129
+VERSION            17.853%   35.685%   53.032%   69.904%    1.954030    0.852001
+MERKLE             17.498%   34.342%   50.368%   65.056%    2.056829    0.869518
+TIME               17.416%   34.293%   50.333%   65.059%    2.058319    0.869806
+PREVHASH           17.636%   34.481%   50.502%   65.125%    2.057234    0.869516
+VERSION+MERKLE     17.511%   34.359%   50.491%   64.998%    2.057620    0.869643
+VERSION+TIME       17.378%   34.372%   50.388%   64.961%    2.057656    0.869737
+ALL                17.259%   34.135%   50.371%   65.103%    2.058334    0.869949
+
+GAIN VS WALK-FORWARD PRIOR
+--------------------------
+Model                   G@1        G@2        G@3        G@4     ΔLogLoss
+VERSION            0.979965   0.988991   0.983708   0.975607  -0.01754886
+MERKLE             0.960509   0.951777   0.934294   0.907950  +0.08525022
+TIME               0.955965   0.950406   0.933635   0.907988  +0.08674057
+PREVHASH           0.968041   0.955626   0.936778   0.908911  +0.08565592
+VERSION+MERKLE     0.961210   0.952239   0.936562   0.907136  +0.08604166
+VERSION+TIME       0.953891   0.952608   0.934655   0.906616  +0.08607772
+ALL                0.947365   0.946034   0.934336   0.908609  +0.08675535
+
+BUCKET OCCUPANCY
+----------------
+VERSION          used=4096/4096 >=10=3912 >=100=  68 max=12938
+MERKLE           used=4096/4096 >=10=4096 >=100=   0 max=75
+TIME             used=4096/4096 >=10=4096 >=100=   0 max=74
+PREVHASH         used=4096/4096 >=10=4096 >=100=   0 max=72
+VERSION+MERKLE   used=4096/4096 >=10=4096 >=100=   0 max=76
+VERSION+TIME     used=4096/4096 >=10=4096 >=100=   0 max=76
+ALL              used=4096/4096 >=10=4096 >=100=   0 max=77
+
+FINAL HISTORICAL PRIOR
+----------------------
+000   35440  17.72000%
+001   36120  18.06000%
+010   35236  17.61800%
+011   34857  17.42850%
+100   21207  10.60350%
+101   14234   7.11700%
+110   13788   6.89400%
+111    9118   4.55900%
+
+INTERPRETATION RULE
+-------------------
+A fingerprint family is informative only if
+it improves OUT-OF-SAMPLE walk-forward
+performance over the historical PRIOR.
+
+R@K alone is insufficient.
+Lower LogLoss/Brier is stronger evidence
+that the conditional probabilities improved.
+
+MERKLE/PREVHASH associations do NOT imply
+cryptographic SHA predictability.
+They may identify mining systems, epochs,
+pool construction, or other process effects.
+
+This experiment predicts HISTORICAL winning
+nonce geometry, not counterfactual SHA success.
+
+V0.28 COMPLETE
+==============
+Future leakage       : NONE
+Nonce as feature     : NO
+Winning hash feature : NO
+Adaptive tuning      : NONE
+Primary baseline     : walk-forward PRIOR

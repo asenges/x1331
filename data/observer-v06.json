@@ -1,0 +1,23 @@
+{
+  "methods": {
+    "binary-agent::bit-transitions::window=3": {
+      "observations": 800,
+      "reward_sum": 798.9380000000007,
+      "reward_sq_sum": 801.1392199999999,
+      "prediction_error_sum": 275.9846666666672
+    },
+    "control-agent::uniform::none": {
+      "observations": 800,
+      "reward_sum": 798.9380000000007,
+      "reward_sq_sum": 801.1392199999999,
+      "prediction_error_sum": 698.9380000000006
+    },
+    "binary-agent::hamming-balance::center=1.5": {
+      "observations": 800,
+      "reward_sum": 798.9380000000007,
+      "reward_sq_sum": 801.1392199999999,
+      "prediction_error_sum": 318.93800000000033
+    }
+  },
+  "experiments": 100
+}

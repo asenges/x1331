@@ -1,0 +1,23 @@
+# Rust build artifacts
+/target/
+
+# Private keys / credentials
+*.pem
+*.key
+.env
+.env.*
+!.env.example
+
+# Editor / OS
+.vscode/
+.idea/
+.DS_Store
+*.swp
+*~
+
+# X1331 large/reconstructable datasets
+
+# Temporary files
+*.tmp
+*.bak
+/data/bitcoin-history-700000-899999.csv

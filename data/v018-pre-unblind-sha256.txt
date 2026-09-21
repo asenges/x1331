@@ -1,0 +1,4 @@
+1ffac6cb7176542e2a124974c52d9308861014c479cba5d2428453ea038eb2ff  data/bitcoin-blocks-v017-discovery-frozen.csv
+f17e434b8ae5ccb85a17e77d5db9abce58f030b4a29dc26a20990c4d29c16be5  data/bitcoin-holdout-p2p-v018-frozen.csv
+cba37ff13dfc18dd7c573ac08c70bbb35f1007eb11d5eaa019f67ef8579a15c3  src/bin/replicate_v017_frozen.rs
+2203d89368aba1ecb9ea240dab17ddd9150dc45949b6e86ac5720f9e28edcb7f  src/bin/p2p_headers_v018_frozen.rs

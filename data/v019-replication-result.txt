@@ -1,0 +1,288 @@
+X1331 Runtime v0.17
+==================
+Frozen Historical Replication Lab
+
+Dataset : data/bitcoin-blocks.csv
+Rows    : 10000
+
+FROZEN DISCOVERY
+================
+Heights    : 890000 .. 890222
+N          : 223
+bit7 ones  : 72 (32.2870%)
+H1         : P(bit7=1) < 0.50
+Role       : DISCOVERY ONLY
+Replication: EXCLUDED
+
+REPLICATION A
+=============
+Heights : 890223 .. 890999
+Observed: 890223 .. 890999
+N       : 777
+Status  : COMPLETE WINDOW
+
+FROZEN H1 TEST
+bit7=1 : 269 (34.6203%)
+bit7=0 : 508 (65.3797%)
+Expected ones under H0 : 388.500
+Effect vs 50%          : -15.3797 percentage points
+One-sided binomial p   : 0.0000000000
+
+L9 DISTRIBUTION
+  000 :  117 ( 15.058%)
+  001 :  133 ( 17.117%)
+  010 :  145 ( 18.662%)
+  011 :  113 ( 14.543%)
+  100 :   96 ( 12.355%)
+  101 :   51 (  6.564%)
+  110 :   70 (  9.009%)
+  111 :   52 (  6.692%)
+L9 entropy: 2.908238 / 3.000000
+
+REPLICATION B
+=============
+Heights : 891000 .. 891999
+Observed: 891000 .. 891999
+N       : 1000
+Status  : COMPLETE WINDOW
+
+FROZEN H1 TEST
+bit7=1 : 312 (31.2000%)
+bit7=0 : 688 (68.8000%)
+Expected ones under H0 : 500.000
+Effect vs 50%          : -18.8000 percentage points
+One-sided binomial p   : 0.0000000000
+
+L9 DISTRIBUTION
+  000 :  191 ( 19.100%)
+  001 :  181 ( 18.100%)
+  010 :  163 ( 16.300%)
+  011 :  153 ( 15.300%)
+  100 :  120 ( 12.000%)
+  101 :   77 (  7.700%)
+  110 :   74 (  7.400%)
+  111 :   41 (  4.100%)
+L9 entropy: 2.862272 / 3.000000
+
+REPLICATION C
+=============
+Heights : 892000 .. 892999
+Observed: 892000 .. 892999
+N       : 1000
+Status  : COMPLETE WINDOW
+
+FROZEN H1 TEST
+bit7=1 : 342 (34.2000%)
+bit7=0 : 658 (65.8000%)
+Expected ones under H0 : 500.000
+Effect vs 50%          : -15.8000 percentage points
+One-sided binomial p   : 0.0000000000
+
+L9 DISTRIBUTION
+  000 :  165 ( 16.500%)
+  001 :  158 ( 15.800%)
+  010 :  173 ( 17.300%)
+  011 :  162 ( 16.200%)
+  100 :  129 ( 12.900%)
+  101 :   70 (  7.000%)
+  110 :   83 (  8.300%)
+  111 :   60 (  6.000%)
+L9 entropy: 2.904058 / 3.000000
+
+REPLICATION D
+=============
+Heights : 893000 .. 893999
+Observed: 893000 .. 893999
+N       : 1000
+Status  : COMPLETE WINDOW
+
+FROZEN H1 TEST
+bit7=1 : 371 (37.1000%)
+bit7=0 : 629 (62.9000%)
+Expected ones under H0 : 500.000
+Effect vs 50%          : -12.9000 percentage points
+One-sided binomial p   : 0.0000000000
+
+L9 DISTRIBUTION
+  000 :  161 ( 16.100%)
+  001 :  175 ( 17.500%)
+  010 :  143 ( 14.300%)
+  011 :  150 ( 15.000%)
+  100 :  131 ( 13.100%)
+  101 :   85 (  8.500%)
+  110 :   92 (  9.200%)
+  111 :   63 (  6.300%)
+L9 entropy: 2.930447 / 3.000000
+
+REPLICATION E
+=============
+Heights : 894000 .. 894999
+Observed: 894000 .. 894999
+N       : 1000
+Status  : COMPLETE WINDOW
+
+FROZEN H1 TEST
+bit7=1 : 341 (34.1000%)
+bit7=0 : 659 (65.9000%)
+Expected ones under H0 : 500.000
+Effect vs 50%          : -15.9000 percentage points
+One-sided binomial p   : 0.0000000000
+
+L9 DISTRIBUTION
+  000 :  168 ( 16.800%)
+  001 :  178 ( 17.800%)
+  010 :  175 ( 17.500%)
+  011 :  138 ( 13.800%)
+  100 :  131 ( 13.100%)
+  101 :   77 (  7.700%)
+  110 :   65 (  6.500%)
+  111 :   68 (  6.800%)
+L9 entropy: 2.898934 / 3.000000
+
+REPLICATION F
+=============
+Heights : 895000 .. 895999
+Observed: 895000 .. 895999
+N       : 1000
+Status  : COMPLETE WINDOW
+
+FROZEN H1 TEST
+bit7=1 : 339 (33.9000%)
+bit7=0 : 661 (66.1000%)
+Expected ones under H0 : 500.000
+Effect vs 50%          : -16.1000 percentage points
+One-sided binomial p   : 0.0000000000
+
+L9 DISTRIBUTION
+  000 :  145 ( 14.500%)
+  001 :  180 ( 18.000%)
+  010 :  162 ( 16.200%)
+  011 :  174 ( 17.400%)
+  100 :  110 ( 11.000%)
+  101 :   80 (  8.000%)
+  110 :   88 (  8.800%)
+  111 :   61 (  6.100%)
+L9 entropy: 2.910127 / 3.000000
+
+REPLICATION G
+=============
+Heights : 896000 .. 896999
+Observed: 896000 .. 896999
+N       : 1000
+Status  : COMPLETE WINDOW
+
+FROZEN H1 TEST
+bit7=1 : 351 (35.1000%)
+bit7=0 : 649 (64.9000%)
+Expected ones under H0 : 500.000
+Effect vs 50%          : -14.9000 percentage points
+One-sided binomial p   : 0.0000000000
+
+L9 DISTRIBUTION
+  000 :  162 ( 16.200%)
+  001 :  170 ( 17.000%)
+  010 :  150 ( 15.000%)
+  011 :  167 ( 16.700%)
+  100 :  125 ( 12.500%)
+  101 :   84 (  8.400%)
+  110 :   74 (  7.400%)
+  111 :   68 (  6.800%)
+L9 entropy: 2.918606 / 3.000000
+
+REPLICATION H
+=============
+Heights : 897000 .. 897999
+Observed: 897000 .. 897999
+N       : 1000
+Status  : COMPLETE WINDOW
+
+FROZEN H1 TEST
+bit7=1 : 348 (34.8000%)
+bit7=0 : 652 (65.2000%)
+Expected ones under H0 : 500.000
+Effect vs 50%          : -15.2000 percentage points
+One-sided binomial p   : 0.0000000000
+
+L9 DISTRIBUTION
+  000 :  159 ( 15.900%)
+  001 :  156 ( 15.600%)
+  010 :  174 ( 17.400%)
+  011 :  163 ( 16.300%)
+  100 :  133 ( 13.300%)
+  101 :   65 (  6.500%)
+  110 :  101 ( 10.100%)
+  111 :   49 (  4.900%)
+L9 entropy: 2.896192 / 3.000000
+
+REPLICATION I
+=============
+Heights : 898000 .. 898999
+Observed: 898000 .. 898999
+N       : 1000
+Status  : COMPLETE WINDOW
+
+FROZEN H1 TEST
+bit7=1 : 345 (34.5000%)
+bit7=0 : 655 (65.5000%)
+Expected ones under H0 : 500.000
+Effect vs 50%          : -15.5000 percentage points
+One-sided binomial p   : 0.0000000000
+
+L9 DISTRIBUTION
+  000 :  170 ( 17.000%)
+  001 :  180 ( 18.000%)
+  010 :  158 ( 15.800%)
+  011 :  147 ( 14.700%)
+  100 :  126 ( 12.600%)
+  101 :   89 (  8.900%)
+  110 :   92 (  9.200%)
+  111 :   38 (  3.800%)
+L9 entropy: 2.890239 / 3.000000
+
+REPLICATION J
+=============
+Heights : 899000 .. 899999
+Observed: 899000 .. 899999
+N       : 1000
+Status  : COMPLETE WINDOW
+
+FROZEN H1 TEST
+bit7=1 : 380 (38.0000%)
+bit7=0 : 620 (62.0000%)
+Expected ones under H0 : 500.000
+Effect vs 50%          : -12.0000 percentage points
+One-sided binomial p   : 0.0000000000
+
+L9 DISTRIBUTION
+  000 :  143 ( 14.300%)
+  001 :  174 ( 17.400%)
+  010 :  159 ( 15.900%)
+  011 :  144 ( 14.400%)
+  100 :  137 ( 13.700%)
+  101 :   83 (  8.300%)
+  110 :  100 ( 10.000%)
+  111 :   60 (  6.000%)
+L9 entropy: 2.931275 / 3.000000
+
+COMBINED HOLDOUT
+================
+Range     : 890223 .. 899999
+N         : 9777
+bit7 ones : 3398 (34.7550%)
+bit7 zeros: 6379 (65.2450%)
+H0        : 50.0000%
+Effect    : -15.2450 percentage points
+p(one-sided): 0.0000000000
+
+IMPORTANT:
+Discovery rows 890000..890222 are excluded.
+
+DECISION RULE
+=============
+The hypothesis is frozen before replication data.
+Do not modify bit position, direction, or discovery interval
+after observing future blocks.
+
+A replicated deviation would establish only a historical
+winning-nonce distribution effect. It would NOT by itself
+establish SHA-256 predictability or profitable mining.
