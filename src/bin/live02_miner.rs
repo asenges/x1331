@@ -1824,88 +1824,13 @@ fn run_session(net: &mut Net, r: &mut Runtime) -> Result<(), Box<dyn Error>> {
         }
 
         /*
-         * No work yet. Avoid a busy-spin while
-         * subscribe/auth/notify arrives.
+         * No current job yet.
+         *
+         * Do NOT consume rx here. All Stratum traffic,
+         * including mining.notify, is processed by the
+         * single try_recv dispatcher above.
          */
-        match rx.recv_timeout(Duration::from_millis(100)) {
-            Ok(msg) => {
-                /*
-                 * Put the message through the same
-                 * handler on the next iteration by
-                 * handling the common early cases here.
-                 */
-                if handle_submit_response(&msg, r, &mut share_log)? {
-                    continue;
-                }
-
-                let id = msg.get("id").and_then(Value::as_i64);
-
-                if id == Some(1) {
-                    let result = msg
-                        .get("result")
-                        .and_then(Value::as_array)
-                        .ok_or("invalid subscribe response")?;
-
-                    extranonce1 = result
-                        .get(1)
-                        .and_then(Value::as_str)
-                        .ok_or("missing extranonce1")?
-                        .to_string();
-
-                    extranonce2_size = result
-                        .get(2)
-                        .and_then(Value::as_u64)
-                        .ok_or("missing extranonce2 size")?
-                        as usize;
-
-                    println!(
-                        "SUBSCRIBE OK | extranonce1={} extranonce2_size={}",
-                        extranonce1, extranonce2_size
-                    );
-
-                    send_json(
-                        &mut stream,
-                        json!({
-                            "id": 2,
-                            "method":
-                                "mining.authorize",
-                            "params": [
-                                WORKER,
-                                PASSWORD
-                            ]
-                        }),
-                    )?;
-                } else if id == Some(2) {
-                    authorized = msg.get("result").and_then(Value::as_bool).unwrap_or(false);
-
-                    println!("AUTHORIZE: {}", if authorized { "OK" } else { "FAILED" });
-
-                    if !authorized {
-                        return Err("authorization failed".into());
-                    }
-                } else {
-                    let method = msg.get("method").and_then(Value::as_str);
-
-                    if method == Some("mining.set_difficulty") {
-                        difficulty = msg
-                            .get("params")
-                            .and_then(Value::as_array)
-                            .and_then(|p| p.first())
-                            .and_then(Value::as_f64);
-
-                        if let Some(d) = difficulty {
-                            println!("DIFFICULTY: {}", d);
-                        }
-                    }
-                }
-            }
-
-            Err(std::sync::mpsc::RecvTimeoutError::Timeout) => {}
-
-            Err(std::sync::mpsc::RecvTimeoutError::Disconnected) => {
-                return Err("pool closed connection".into());
-            }
-        }
+        std::thread::sleep(Duration::from_millis(100));
     }
 }
 
