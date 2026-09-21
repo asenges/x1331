@@ -21,3 +21,9 @@
 *.tmp
 *.bak
 /data/bitcoin-history-700000-899999.csv
+
+# X1331 LIVE-02 runtime state
+data/live02-observer.bin
+data/live02-state.json
+data/live02-audit.csv
+data/live02-learn.csv
