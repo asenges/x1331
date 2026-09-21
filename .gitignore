@@ -27,3 +27,9 @@ data/live02-observer.bin
 data/live02-state.json
 data/live02-audit.csv
 data/live02-learn.csv
+data/live02-miner.pid
+data/live02-shares.csv
+logs/
+data/live03-state.json
+data/live03-shares.csv
+data/live03-miner.pid
