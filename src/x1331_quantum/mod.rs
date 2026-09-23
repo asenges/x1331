@@ -14,13 +14,25 @@
 //! - cube-mediated evolution
 //! - adaptive 8 -> K reduction
 //!
+//! LIVE-09C:
+//! - causal MEM + EXPERIENCE
+//! - conventional count-memory baseline
+//! - X1331 resonance from accumulated experience
+//! - prospective evaluation before memory update
+//!
 //! No SHA256d is performed in this module.
 //! No physical quantum-computing claim is made.
 
 pub mod bit_matrix;
+pub mod memory;
 pub mod schrodinger;
 
 pub use bit_matrix::{BitOrder, FigureTransition, X1331BitMatrix, X1331Cell, X1331State};
+
+pub use memory::{
+    brier_score, l1_distance_from_uniform, log_loss, probability_rank, recall_at_k, top_state,
+    ContextMemory, Experience, MemoryPrediction, ResonanceReport,
+};
 
 pub use schrodinger::{
     Amplitude, CollapseDecision, EvolutionConfig, Psi1331, RankedState, STATE_COUNT,
