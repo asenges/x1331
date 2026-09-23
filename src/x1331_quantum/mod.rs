@@ -1,31 +1,40 @@
 //! X1331 quantum-inspired classical computation primitives.
 //!
+//! RAW BINARY is authoritative.
+//! X1331 states are derived figures over real bit coordinates.
+//!
 //! LIVE-09A:
-//! - exact packed raw bytes remain authoritative
-//! - reversible bit coordinates
-//! - 3-bit X1331 cells
-//! - 8-state Boolean cube
-//! - 1|3|3|1 Hamming topology
-//! - figure progression
+//! - reversible raw binary matrix
+//! - 3-bit figures
+//! - Boolean cube / 1|3|3|1 topology
 //!
 //! LIVE-09B:
-//! - eight-state classical complex Psi
+//! - classical complex Psi
 //! - phase and interference
-//! - cube-mediated evolution
-//! - adaptive 8 -> K reduction
+//! - adaptive 8 -> K mechanics
 //!
 //! LIVE-09C:
 //! - causal MEM + EXPERIENCE
-//! - conventional count-memory baseline
-//! - X1331 resonance from accumulated experience
-//! - prospective evaluation before memory update
+//! - prospective learning
 //!
-//! No SHA256d is performed in this module.
+//! LIVE-09D:
+//! - binary-first temporal memory
+//! - states derived from X1331BitMatrix
+//! - BEFORE expectation
+//! - prospective calibration
+//! - PASS / K4 / K2 / K1
+//!
 //! No physical quantum-computing claim is made.
 
+pub mod binary_temporal;
 pub mod bit_matrix;
 pub mod memory;
 pub mod schrodinger;
+
+pub use binary_temporal::{
+    ranked_states, retained, BinaryObserverAction, BinaryPrediction, BinaryTemporalMemory,
+    BinaryTemporalObserver, ProspectiveCalibration,
+};
 
 pub use bit_matrix::{BitOrder, FigureTransition, X1331BitMatrix, X1331Cell, X1331State};
 
