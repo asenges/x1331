@@ -104,6 +104,16 @@ impl Default for EvolutionConfig {
 }
 
 impl Psi1331 {
+    /// Construct a normalized X1331 state from explicit complex amplitudes.
+    ///
+    /// This is the controlled entry point used by the LIVE-11Q gate engine.
+    /// The internal amplitude array remains private and authoritative.
+    pub fn from_amplitudes(amplitudes: [Amplitude; STATE_COUNT]) -> Self {
+        let mut psi = Self { amplitudes };
+        psi.normalize();
+        psi
+    }
+
     pub fn uniform() -> Self {
         let magnitude = 1.0 / (STATE_COUNT as f64).sqrt();
 
